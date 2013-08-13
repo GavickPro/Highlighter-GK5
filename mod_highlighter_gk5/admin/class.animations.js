@@ -1,8 +1,11 @@
-
 // class used with data sources
-var Animations = new Class({
+var Animations = function() {
 	// array of the configuration
-	animations: null,
+	this.animations = null;
+	this.initialize();
+};
+
+Animations.prototype = {
 	
 	initialize: function() {
 		// binding
@@ -10,8 +13,9 @@ var Animations = new Class({
 		// set the array of configuration
 		this.animations = [];
 		// get the data sources
-		document.id('jform_params_animation_type').getElements('option').each(function(item, i) {
-			var value = item.getProperty('value');
+		jQuery('#jform_params_animation_type').find('option').each(function(i, item) {
+			item = jQuery(item);
+			var value = item.val();
 			$this.animations.push(value);
 		});
 		
@@ -19,26 +23,24 @@ var Animations = new Class({
 		this.changeValue();
 		
 		// add events
-		document.id('jform_params_animation_type').addEvents({
-			'change': function() { $this.changeValue(); },		
-			'focus': function() { $this.changeValue(); },
-			'blur': function() { $this.changeValue(); }
-		});
+		jQuery('#jform_params_animation_type').on('blur', function() { $this.changeValue() });
+		jQuery('#jform_params_animation_type').on('focus', function() { $this.changeValue() });
+		jQuery('#jform_params_animation_type').on('change', function() { $this.changeValue() });
 	},
 	
 	changeValue: function() {
 		// binding
 		var $this = this;
 		// get the data source value ..
-		var animation_value = document.id('jform_params_animation_type').get('value');
+		var animation_value = jQuery('#jform_params_animation_type').val();
 		
 				
 		// hide unsupported parameters
 		if(animation_value == 'flipx' || animation_value == 'fadeLeft' || animation_value == 'opacity' || animation_value == 'bar') {
-			document.id('jform_params_animation_fun').getParent().setStyle('display', 'none');
+			jQuery('#jform_params_animation_fun').parents().eq(1).css('display', 'none');
 		} else {
-			document.id('jform_params_animation_fun').getParent().setStyle('display', 'block');
+			jQuery('#jform_params_animation_fun').parents().eq(1).css('display', 'block');
 			
 		}
 	}
-});
+};

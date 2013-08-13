@@ -1,8 +1,8 @@
 <?php
 /**
 * JElementK2MultiCategories - additional element for module XML file
-* @package Highlighter GK4
-* @Copyright (C) 2009-2011 Gavick.com
+* @package Highlighter GK5
+* @Copyright (C) 2009-2013 Gavick.com
 * @ All rights reserved
 * @ Joomla! is Free Software
 * @ Released under GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
@@ -28,19 +28,23 @@ class JFormFieldK2Multicategories extends JFormFieldList {
 		$attr .= $this->multiple ? ' multiple="multiple"' : '';
 		// Initialize JavaScript field attributes.
 		$attr .= $this->element['onchange'] ? ' onchange="'.(string) $this->element['onchange'].'"' : '';
-		// Get the field options.
-		$options = (array) $this->getOptions();
-		// Create a read-only list (no name) with a hidden input to store the value.
+		$path = JPath::clean(JPATH_BASE.DS.'components'.DS.'com_k2');
+		if (! file_exists($path)) {
+			// do nothing because K2 is not installed
+		} else {
+			$options = (array) $this->getOptions();
+		}	
 		if ((string) $this->element['readonly'] == 'true') {
 			$html[] = JHtml::_('select.genericlist', $options, '', trim($attr), 'value', 'text', $this->value, $this->id);
 			$html[] = '<input type="hidden" name="'.$this->name.'" value="'.$this->value.'"/>';
 		}
+
 		// Create a regular list.
 		else {
 		    if($options[0]!=''){
 				$html[] = JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
             } else {
-               return '<select id="jform_params_k2_categories" style="display:none"></select><strong style="line-height: 2.6em" class="gk-hidden-field">K2 is not installed or any K2 categories are available.</strong>';
+               return '<select id="jform_params_k2_categories" style="display:none"></select><strong style="line-height: 2.6em" class="gk-hidden-field hide-k2">  K2 is not installed or any K2 categories are available.</strong>';
             }
 		}
 		
@@ -60,7 +64,7 @@ class JFormFieldK2Multicategories extends JFormFieldList {
         $attr .= $this->multiple ? ' multiple="multiple"' : '';
         // Initialize JavaScript field attributes.
         $attr .= $this->element['onchange'] ? ' onchange="'.(string) $this->element['onchange'].'"' : '';
-        $db = JFactory::getDBO();
+         $db = JFactory::getDBO();
         // generating query
 		$db->setQuery("SELECT c.name AS name, c.id AS id, c.parent AS parent FROM #__k2_categories AS c WHERE published = 1 AND trash = 0 ORDER BY c.name, c.parent ASC");
  		// getting results

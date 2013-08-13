@@ -10,6 +10,7 @@
 **/
 /** access restriction **/
 defined('_JEXEC') or die('Restricted access');
+if(!defined('DS')){ define('DS',DIRECTORY_SEPARATOR); }
 /**	Loading helper class **/
 require_once (dirname(__FILE__).DS.'helper.php');
 //

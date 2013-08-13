@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5.0" client="site" method="upgrade">
+<extension type="module" version="3.0" client="site" method="upgrade">
         <name>Highlighter GK5</name>
         <author>GavickPro</author>
         <creationDate>09/08/2013</creationDate>
@@ -18,12 +18,12 @@
         	span.readonly p.homepage { margin-top: 30px }
         	span.readonly p.license { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
         	</style>
-        	<span class="readonly"><h1>Highlighter GK5 <small>ver. 1.0</small></h1><p>GK5 is new generation of our extensions dedicated to Joomla! 1.6+.</p><p>Highlighter GK5 is news rotator which allows to present chosen articles headers in an attractive way. Thanks to multiple options, users may adjust it to their needs. Additionally, Highlighter GK5 can be integrated with any source of information.</p> <p class='homepage'><a href='https://www.gavick.com/highlighter-gk5.html' target='_blank'>Learn more at the Highlighter GK5 project website.</a></p><p class='license'>Highlighter GK5 is released under the <a target="_blank" href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License version 2 or later.</a></p></span>
+        	<span class="readonly"><h1>Highlighter GK5 <small>ver. 1.0</small></h1><p>GK5 is new generation of our extensions dedicated to Joomla! 2.5+.</p><p>Highlighter GK5 is news rotator which allows to present chosen articles headers in an attractive way. Thanks to multiple options, users may adjust it to their needs. Additionally, Highlighter GK5 can be integrated with any source of information.</p> <p class='homepage'><a href='https://www.gavick.com/highlighter-gk5.html' target='_blank'>Learn more at the Highlighter GK5 project website.</a></p><p class='license'>Highlighter GK5 is released under the <a target="_blank" href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License version 2 or later.</a></p></span>
         ]]>
         </description>
         
         <updateservers>
-		<server type="extension" priority="1" name="Highlighter GK5 Updates">https://www.gavick.com/update_server/joomla25/highlighter_gk5.xml</server>
+		<server type="extension" priority="1" name="Highlighter GK5 Updates">https://www.gavick.com/update_server/joomla30/highlighter_gk5.xml</server>
 		</updateservers>
         
 		<languages folder="language">
@@ -45,10 +45,10 @@
 			<fields name="params">
 			<fieldset name="MOD_HIGHLIGHT_GK5_BASIC_SETTINGS" addfieldpath="/modules/mod_highlighter_gk5/admin/elements">
 		  		<field type="asset" path="modules/mod_highlighter_gk5/admin/" />
-		  		<field name="config_manager" type="configmanager" directory="modules/mod_highlighter_gk5/config/" />
-		        <field name="moduleclass_sfx" type="text" default="" label="MOD_HIGHLIGHTER_GK5_MODCLASSSUFFIX" description="MOD_HIGHLIGHTER_GK5_MODCLASSSUFFIX_DESC" />
-		        <field name="module_unique_id" type="text" default="" label="MOD_HIGHLIGHTER_GK5_MODID" description="MOD_HIGHLIGHTER_GK5_MODID_DESC" />
-	         	<field name="automatic_module_id" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_AUTOMATIC_MODULE_ID" description="MOD_HIGHLIGHTER_GK5_AUTOMATIC_MODULE_ID_DESC">
+		  		<field name="config_manager" type="configmanager" directory="/modules/mod_highlighter_gk5/config/" />
+		        <field name="moduleclass_sfx" type="text" class="input-medium" default="" label="MOD_HIGHLIGHTER_GK5_MODCLASSSUFFIX" description="MOD_HIGHLIGHTER_GK5_MODCLASSSUFFIX_DESC" />
+		        <field name="module_unique_id" type="text" default="" class="input-medium" label="MOD_HIGHLIGHTER_GK5_MODID" description="MOD_HIGHLIGHTER_GK5_MODID_DESC" />
+	         	<field name="automatic_module_id" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_AUTOMATIC_MODULE_ID" description="MOD_HIGHLIGHTER_GK5_AUTOMATIC_MODULE_ID_DESC">
 	                    <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
 	                    <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
 	            </field>
@@ -62,8 +62,8 @@
 	        	<field name="k2_items" type="text" default="" size="25" label="MOD_HIGHLIGHTER_GK5_K2ITEMS" description="MOD_HIGHLIGHTER_GK5_K2ITEMS_DESC" />
 	        	<field name="json_file" type="filelist" default="" label="MOD_HIGHLIGHTER_GK5_EXTERNAL_SOURCE" description="MOD_HIGHLIGHTER_GK5_EXTERNAL_SOURCE_DESC" directory="modules/mod_highlighter_gk5/external_data" filter="(\.json)$" stripext="" hide_default="hide_default" class="gk-hidden-field" />
 	        	<field name="xml_file" type="filelist" default="" label="MOD_HIGHLIGHTER_GK5_EXTERNAL_SOURCE" description="MOD_HIGHLIGHTER_GK5_EXTERNAL_SOURCE_DESC" directory="modules/mod_highlighter_gk5/external_data" filter="(\.xml)$" stripext="" hide_default="hide_default" class="gk-hidden-field" />
-                <field name="news_amount" type="text" default="10" size="3" label="MOD_HIGHLIGHTER_GK5_NEWS_AMOUNT" description="MOD_HIGHLIGHTER_GK5_NEWS_AMOUNT_DESC" />
-	        	<field name="news_sort_value" type="list" default="created" label="MOD_HIGHLIGHTER_GK5_NEWS_SORT_VALUE" description="MOD_HIGHLIGHTER_GK5_NEWS_SORT_VALUE_DESC">
+                <field name="news_amount" type="text" default="10" class="input-small" label="MOD_HIGHLIGHTER_GK5_NEWS_AMOUNT" description="MOD_HIGHLIGHTER_GK5_NEWS_AMOUNT_DESC" />
+	        	<field name="news_sort_value" type="list" default="created" class="input-medium" label="MOD_HIGHLIGHTER_GK5_NEWS_SORT_VALUE" description="MOD_HIGHLIGHTER_GK5_NEWS_SORT_VALUE_DESC">
 	                        <option value="created">MOD_HIGHLIGHTER_GK5_DATE</option>
 	                        <option value="title">MOD_HIGHLIGHTER_GK5_TITLE</option>
 							<option value="ordering">MOD_HIGHLIGHTER_GK5_ORDER</option>
@@ -71,26 +71,26 @@
 	                        <option value="random">MOD_HIGHLIGHTER_GK5_RANDOM</option>
 	                        <option value="hits">MOD_HIGHLIGHTER_GK5_HITS</option>
 	      		</field>
-	            <field name="news_sort_order" type="list" default="DESC" label="MOD_HIGHLIGHTER_GK5_NEWS_SORT_ORDER" description="MOD_HIGHLIGHTER_GK5_NEWS_SORT_ORDER_DESC">
+	            <field name="news_sort_order" type="list" class="input-medium" default="DESC" label="MOD_HIGHLIGHTER_GK5_NEWS_SORT_ORDER" description="MOD_HIGHLIGHTER_GK5_NEWS_SORT_ORDER_DESC">
 	                    <option value="ASC">MOD_HIGHLIGHTER_GK5_ASC</option>
 	                    <option value="DESC">MOD_HIGHLIGHTER_GK5_DESC</option>
 	            </field>
-	            <field name="news_since" type="calendar" default="" label="MOD_HIGHLIGHTER_GK5_NEWS_SINCE" description="MOD_HIGHLIGHTER_GK5_NEWS_SINCE_DESC" format="%Y-%m-%d 00:00:00" />     
-	            <field name="news_in" type="text" default="" label="MOD_HIGHLIGHTER_GK5_NEWS_IN" description="MOD_HIGHLIGHTER_GK5_IN_DESC"/>    
-	            <field name="news_frontpage" type="list" default="1" class="gk_switch" label="MOD_HIGHLIGHTER_GK5_FRONTPAGE_FEATURED" description="MOD_HIGHLIGHTER_GK5_FRONTPAGE_FEATURED_DESC">
+	            <field name="news_since" class="input-small" type="calendar" default="" label="MOD_HIGHLIGHTER_GK5_NEWS_SINCE" description="MOD_HIGHLIGHTER_GK5_NEWS_SINCE_DESC" format="%Y-%m-%d 00:00:00" />     
+	            <field name="news_in" class="input-small" type="text" default="" label="MOD_HIGHLIGHTER_GK5_NEWS_IN" description="MOD_HIGHLIGHTER_GK5_IN_DESC"/>    
+	            <field name="news_frontpage" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_FRONTPAGE_FEATURED" description="MOD_HIGHLIGHTER_GK5_FRONTPAGE_FEATURED_DESC">
 	                    <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
 	                    <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
 	            </field>
-			  	<field name="unauthorized" type="list" default="0" class="gk_switch" label="MOD_HIGHLIGHTER_GK5_UNAUTH" description="MOD_HIGHLIGHTER_GK5_UNAUTH_DESC">
+			  	<field name="unauthorized" type="radio" class="btn-group" default="0" label="MOD_HIGHLIGHTER_GK5_UNAUTH" description="MOD_HIGHLIGHTER_GK5_UNAUTH_DESC">
 	            		<option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
 	                    <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
 	            </field>
-	            <field name="only_frontpage" type="list" default="0" class="gk_switch" label="MOD_HIGHLIGHTER_GK5_ONLYFRONTPAGE_ONLYFEATURED" description="MOD_HIGHLIGHTER_GK5_ONLYFRONTPAGE_ONLYFEATURED_DESC">
+	            <field name="only_frontpage" type="radio" class="btn-group" default="0" label="MOD_HIGHLIGHTER_GK5_ONLYFRONTPAGE_ONLYFEATURED" description="MOD_HIGHLIGHTER_GK5_ONLYFRONTPAGE_ONLYFEATURED_DESC">
 	            		<option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
 	                    <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
 	            </field>
-	            <field name="startposition" type="text" default="0" size="5" label="MOD_HIGHLIGHTER_GK5_FIRST_NEWS" description="MOD_HIGHLIGHTER_GK5_FIRST_NEWS_DESC"/>
-            	<field name="time_offset" type="list" default="0" label="MOD_HIGHLIGHTER_GK5_TIME_OFFSET" description="MOD_HIGHLIGHTER_GK5_TIME_OFFSET_DESC">
+	            <field name="startposition" type="text" default="0" class="input-small" label="MOD_HIGHLIGHTER_GK5_FIRST_NEWS" description="MOD_HIGHLIGHTER_GK5_FIRST_NEWS_DESC"/>
+            	<field name="time_offset" class="input-small" default="0" label="MOD_HIGHLIGHTER_GK5_TIME_OFFSET" description="MOD_HIGHLIGHTER_GK5_TIME_OFFSET_DESC">
                 		<option value="-12">-12</option>
                 		<option value="-11">-11</option>
                 		<option value="-10">-10</option>
@@ -119,46 +119,46 @@
                 </field>
 			</fieldset>	
 			<fieldset name="MOD_HIGHLIGHT_GK5_LAYOUT_SETTINGS" addfieldpath="/modules/mod_highlighter_gk5/admin/elements"> 
-                <field name="news_as_links" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_NEWS_AS_LINKS" description="MOD_HIGHLIGHTER_GK5_NEWS_AS_LINKS_DESC">
+                <field name="news_as_links" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_NEWS_AS_LINKS" description="MOD_HIGHLIGHTER_GK5_NEWS_AS_LINKS_DESC">
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                         <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                 </field> 
-                <field name="show_title" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_SHOW_TITLE" description="MOD_HIGHLIGHTER_GK5_SHOW_TITLE_DESC">
+                <field name="show_title" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_SHOW_TITLE" description="MOD_HIGHLIGHTER_GK5_SHOW_TITLE_DESC">
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                         <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                 </field> 
-                <field name="show_desc" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_SHOW_DESC" description="MOD_HIGHLIGHTER_GK5_SHOW_DESC_DESC">
+                <field name="show_desc" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_SHOW_DESC" description="MOD_HIGHLIGHTER_GK5_SHOW_DESC_DESC">
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                         <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                 </field> 
-                <field name="use_title_alias" type="list" class="gk_switch" default="0" label="MOD_HIGHLIGHTER_GK5_TITLE_ALIAS" description="">
+                <field name="use_title_alias" type="radio" class="btn-group" default="0" label="MOD_HIGHLIGHTER_GK5_TITLE_ALIAS" description="">
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                         <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                 </field>
-                <field name="title_limit_type" type="list" default="chars" label="MOD_HIGHLIGHTER_GK5_TITLE_LIMIT_TYPE" description="">
+                <field name="title_limit_type" type="radio" class="btn-group" default="chars" label="MOD_HIGHLIGHTER_GK5_TITLE_LIMIT_TYPE" description="">
                         <option value="words">MOD_HIGHLIGHTER_GK5_WORDS</option>
                         <option value="chars">MOD_HIGHLIGHTER_GK5_CHARS</option>
                 </field>
-                <field name="title_limit" class="short text-limit" type="text" default="20" size="5" label="MOD_HIGHLIGHTER_GK5_TITLE_MAX_AMOUNT" description=""/>
-               	<field name="desc_limit_type" type="list" default="chars" label="MOD_HIGHLIGHTER_GK5_DESC_LIMIT_TYPE" description="">
+                <field name="title_limit" type="text" class="input-small" default="20" size="5" label="MOD_HIGHLIGHTER_GK5_TITLE_MAX_AMOUNT" description=""/>
+               	<field name="desc_limit_type" type="radio" class="btn-group" default="chars" label="MOD_HIGHLIGHTER_GK5_DESC_LIMIT_TYPE" description="">
                         <option value="words">MOD_HIGHLIGHTER_GK5_WORDS</option>
                         <option value="chars">MOD_HIGHLIGHTER_GK5_CHARS</option>
                 </field>
-                <field name="desc_limit" class="short text-limit" type="text" default="40" size="5" label="MOD_HIGHLIGHTER_GK5_DESC_MAX_AMOUNT" description=""/>
+                <field name="desc_limit" class="input-small" type="text" default="40" label="MOD_HIGHLIGHTER_GK5_DESC_MAX_AMOUNT" description=""/>
                 <field name="gk_line_1" type="line" text="MOD_HIGHLIGHTER_GK5_INTERFACE" />
-                <field name="interface" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_INTERFACE" description="MOD_HIGHLIGHTER_GK5_INTERFACE_DESC">
+                <field name="interface" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_INTERFACE" description="MOD_HIGHLIGHTER_GK5_INTERFACE_DESC">
                          <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                          <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                  </field> 
-                 <field name="interface_bg" type="text" default="#819510" class="color-field" size="8" label="MOD_HIGHLIGHTER_GK5_INTERFACE_BG" description="MOD_HIGHLIGHTER_GK5_INTERFACE_BG_DESC"/>
-                	<field name="interface_radius" type="text" default="26" class="input-pixels" size="3" label="MOD_HIGHLIGHTER_GK5_INTERFACE_RADIUS" description="MOD_HIGHLIGHTER_GK5_INTERFACE_RADIUS_DESC"/>
+                 <field name="interface_bg" default="#819510" type="color" label="MOD_HIGHLIGHTER_GK5_INTERFACE_BG" description="MOD_HIGHLIGHTER_GK5_INTERFACE_BG_DESC"/>
+                	<field name="interface_radius" type="text" default="26" class="input-pixels input-small" label="MOD_HIGHLIGHTER_GK5_INTERFACE_RADIUS" description="MOD_HIGHLIGHTER_GK5_INTERFACE_RADIUS_DESC"/>
                  <field name="gk_line_2" type="line" text="MOD_HIGHLIGHTER_GK5_INTROTEXT" />
-                 <field name="introtext" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_INTROTEXT" description="MOD_HIGHLIGHTER_GK5_INTROTEXT_DESC">
+                 <field name="introtext" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_INTROTEXT" description="MOD_HIGHLIGHTER_GK5_INTROTEXT_DESC">
                          <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                          <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                  </field> 
-                 <field name="introtext_color" type="text" default="#ffffff" class="color-field" size="8" label="MOD_HIGHLIGHTER_GK5_INTROTEXT_COLOR" description="MOD_HIGHLIGHTER_GK5_INTROTEXT_COLOR_DESC"/>  
-                 <field name="introtext_value" type="text" default="HOT NEWS" size="15" label="MOD_HIGHLIGHTER_GK5_INTROTEXT_VALUE" description="MOD_HIGHLIGHTER_GK5_INTROTEXT_VALUE_DESC"/> 
+                 <field name="introtext_color" type="color" default="#ffffff" label="MOD_HIGHLIGHTER_GK5_INTROTEXT_COLOR" description="MOD_HIGHLIGHTER_GK5_INTROTEXT_COLOR_DESC"/>  
+                 <field name="introtext_value" type="text" default="HOT NEWS" class="input-small" label="MOD_HIGHLIGHTER_GK5_INTROTEXT_VALUE" description="MOD_HIGHLIGHTER_GK5_INTROTEXT_VALUE_DESC"/> 
             </fieldset>	
 			<fieldset name="MOD_HIGHLIGHT_GK5_ANIM_SETTINGS" addfieldpath="/modules/mod_highlighter_gk5/admin/elements">
                 <field name="animation_type" type="list" default="1" label="MOD_HIGHLIGHTER_GK5_ANIM_TYPE" description="MOD_HIGHLIGHTER_GK5_ANIM_TYPE_DESC">
@@ -172,13 +172,13 @@
                         <option value="bar">MOD_HIGHLIGHTER_GK5_3D_BAR</option>
                         <option value="linear">MOD_HIGHLIGHTER_GK5_LINEAR</option>
                 </field>              
-                <field name="hover_anim" type="list" class="gk_switch" default="0" label="MOD_HIGHLIGHTER_GK5_HOVERANIM" description="MOD_HIGHLIGHTER_GK5_HOVERANIM_DESC">
+                <field name="hover_anim" type="radio" class="btn-group" default="0" label="MOD_HIGHLIGHTER_GK5_HOVERANIM" description="MOD_HIGHLIGHTER_GK5_HOVERANIM_DESC">
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                         <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                 </field>  
-                <field name="animation_speed" class="input-ms text_area medium" type="text" default="350" size="5" label="MOD_HIGHLIGHTER_GK5_ANIMSPEED" description="MOD_HIGHLIGHTER_GK5_ANIMSPEED_DESC"/>        
-                <field name="animation_interval" class="input-ms text_area medium last-in-group" type="text" default="5000" size="5" label="MOD_HIGHLIGHTER_GK5_ANIMINTERVAL" description="MOD_HIGHLIGHTER_GK5_ANIMINTERVAL_DESC"/> 
-				<field name="animation_fun" type="list" default="Fx.Transitions.linear" label="MOD_HIGHLIGHTER_GK5_ANIMFUN" description="MOD_HIGHLIGHTER_GK5_ANIMFUN_DESC">
+                <field name="animation_speed" class="input-ms input-small" type="text" default="350" size="5" label="MOD_HIGHLIGHTER_GK5_ANIMSPEED" description="MOD_HIGHLIGHTER_GK5_ANIMSPEED_DESC"/>        
+                <field name="animation_interval" class="input-ms input-small" type="text" default="5000" size="5" label="MOD_HIGHLIGHTER_GK5_ANIMINTERVAL" description="MOD_HIGHLIGHTER_GK5_ANIMINTERVAL_DESC"/> 
+				<field name="animation_fun" type="list" class="input-medium" default="Fx.Transitions.linear" label="MOD_HIGHLIGHTER_GK5_ANIMFUN" description="MOD_HIGHLIGHTER_GK5_ANIMFUN_DESC">
                         <option value="Fx.Transitions.linear">linear</option>
                         <option value="Fx.Transitions.Quad.easeIn">Quad.easeIn</option>
                         <option value="Fx.Transitions.Quad.easeOut">Quad.easeOut</option>
@@ -216,34 +216,34 @@
                 </field>
 			  </fieldset>	
 				<fieldset name="MOD_HIGHLIGHT_GK5_ADDITIONAL_SETTINGS" addfieldpath="/modules/mod_highlighter_gk5/admin/elements">
-                <field name="clean_xhtml" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_CLEANXHTML" description="MOD_HIGHLIGHTER_GK5_CLEANXHTML_DESC">
-                        <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
+                <field name="clean_xhtml" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_CLEANXHTML" description="MOD_HIGHLIGHTER_GK5_CLEANXHTML_DESC">
                         <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
+                        <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                 </field>
-               	<field name="parse_plugins" type="list" class="gk_switch" default="0" label="MOD_HIGHLIGHTER_GK5_PARSE" description="MOD_HIGHLIGHTER_GK5_PARSE_DESC">
+               	<field name="parse_plugins" type="radio" class="btn-group" default="0" label="MOD_HIGHLIGHTER_GK5_PARSE" description="MOD_HIGHLIGHTER_GK5_PARSE_DESC">
 						<option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                 </field>    	
-   				<field name="clean_plugins" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_CLEANPLUGINS" description="MOD_HIGHLIGHTER_GK5_CLEANPLUGINS_DESC">
+   				<field name="clean_plugins" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_CLEANPLUGINS" description="MOD_HIGHLIGHTER_GK5_CLEANPLUGINS_DESC">
 						<option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                 </field>
-   				<field name="useCSS" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_USECSS" description="MOD_HIGHLIGHTER_GK5_USECSS_DESC">
+   				<field name="useCSS" type="radio" class="btn-group" default="1" label="MOD_HIGHLIGHTER_GK5_USECSS" description="MOD_HIGHLIGHTER_GK5_USECSS_DESC">
 						<option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                         <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                 </field> 
-                <field name="useScript" type="list" default="2" label="MOD_HIGHLIGHTER_GK5_USEJS" description="MOD_HIGHLIGHTER_GK5_USEJS_DESC">
+                <field name="useScript" type="radio" class="btn-group" default="2" label="MOD_HIGHLIGHTER_GK5_USEJS" description="MOD_HIGHLIGHTER_GK5_USEJS_DESC">
                         <option value="2">MOD_HIGHLIGHTER_GK5_AUTOMATIC</option>
 						<option value="1">MOD_HIGHLIGHTER_GK5_FORCEENABLED</option>
                         <option value="0">MOD_HIGHLIGHTER_GK5_FORCEDISABLED</option>
                 </field> 
-                <field name="engine_mode" type="list" default="mootools" label="MOD_HIGHLIGHTER_GK5_ENGINE_MODE" description="MOD_HIGHLIGHTER_GK5_ENGINE_MODE_DESC">
+                <field name="engine_mode" type="radio" class="btn-group" default="mootools" label="MOD_HIGHLIGHTER_GK5_ENGINE_MODE" description="MOD_HIGHLIGHTER_GK5_ENGINE_MODE_DESC">
 						<option value="mootools">MOD_HIGHLIGHTER_GK5_MODE_MOOTOOLS</option>
 						<option value="jquery">MOD_HIGHLIGHTER_GK5_MODE_JQUERY</option>
 				</field> 
-				<field name="include_jquery" type="list" class="gk_switch" default="0" label="MOD_HIGHLIGHTER_GK5_INCLUDE_JQUERY" description="MOD_HIGHLIGHTER_GK5_INCLUDE_JQUERY_DESC">
-				        <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
+				<field name="include_jquery" type="radio" class="btn-group" default="0" label="MOD_HIGHLIGHTER_GK5_INCLUDE_JQUERY" description="MOD_HIGHLIGHTER_GK5_INCLUDE_JQUERY_DESC">			        
 				        <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
+				        <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
 				</field>
 			</fieldset>
 			<fieldset name="HIGHLIGHT_ABOUT_US" addfieldpath="/modules/mod_highlighter_gk5/admin/elements">

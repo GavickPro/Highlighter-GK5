@@ -1,8 +1,11 @@
 <?php
 
 defined('JPATH_BASE') or die;
+
 if(!defined('DS')){ define('DS',DIRECTORY_SEPARATOR); }
+
 jimport('joomla.form.formfield');
+jimport('joomla.filesystem.folder');
 
 class JFormFieldConfigManager extends JFormField {
 	protected $type = 'ConfigManager';
@@ -38,12 +41,12 @@ class JFormFieldConfigManager extends JFormField {
 					$result = $db->query();
 					// check the result
 					if($result) {
-						$msg = '<div class="gk_ok">'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_LOADED_AND_SAVED').'</div>';
+						$msg = '<div class="alert alert-success"> <button type="button" class="close" data-dismiss="alert">&times;</button>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_LOADED_AND_SAVED').'</div>';
 					} else {
-						$msg = '<div class="gk_error">'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SQL_ERROR').'</div>';
+						$msg = '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SQL_ERROR').'</div>';
 					}
 				} else {
-					$msg = '<div class="gk_error">'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SELECTED_FILE_DOESNT_EXIST').'</div>';
+					$msg = '<div class="alert alert-block"><button type="button" class="close" data-dismiss="alert">&times;</button>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SELECTED_FILE_DOESNT_EXIST').'</div>';
 				}	
 			} else if($task == 'save') {
 				if($file == '') {
@@ -101,12 +104,12 @@ class JFormFieldConfigManager extends JFormField {
 		$html = '';
 		$html .= '<div id="gk-social"><span>Follow us on the social media: </span> <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Fgavickpro&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe> <a href="https://twitter.com/gavickpro" class="twitter-follow-button" data-show-count="false">Follow @Dziudek</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script></div>';
-		$html .= '<div id="config_manager_form">';
+		$html .= '<div id="config_manager_form" class="well">';
 		$html .= $msg;
-		$html .= '<div><label>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_LOAD').'</label>'.$file_select.'<button id="config_manager_load">'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_LOAD_BTN').'</button></div>';
-		$html .= '<div><label>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SAVE').'</label><input type="text" id="config_manager_save_filename" /><span>.json</span><button id="config_manager_save">'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SAVE_BTN').'</button></div>';
-		$html .= '<div><label>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_DELETE').'</label>'.$file_delete.'<button id="config_manager_delete">'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_DELETE_BTN').'</button></div>';
-		$html .= '<div><label>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_DIRECTORY').'</label><span>'.$base_path.'</span></div>';
+		$html .= '<div><p><label>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_LOAD').'</label>'.$file_select.'<button id="config_manager_load" class="btn"><i class="icon-download"></i>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_LOAD_BTN').'</button></p></div>';
+		$html .= '<div class="input-append"><p><label>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SAVE').'</label><input type="text" id="config_manager_save_filename" class="input-medium" /><span class="add-on">.json</span><button id="config_manager_save" class="btn"><i class="icon-upload"></i> '.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_SAVE_BTN').'</button></p></div>';
+		$html .= '<div><p><label>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_DELETE').'</label>'.$file_delete.'<button id="config_manager_delete" class="btn"><i class="icon-remove"></i>'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_DELETE_BTN').'</button></p></div>';
+		$html .= '<div><p><span class="label label-warning">'.JText::_('MOD_HIGHLIGHTER_GK5_CONFIG_DIRECTORY').'</span> <span>'.$base_path.'</span></p></div>';
 		$html .= '</div>';
 		// finish the output
 		return $html;

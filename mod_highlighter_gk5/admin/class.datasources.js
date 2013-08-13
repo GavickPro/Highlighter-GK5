@@ -1,68 +1,66 @@
 // class used with data sources
-var DataSources = new Class({
+var DataSources = function() {
 	// array of the configuration
-	datasources: null,
+	this.datasources = null;
+	this.initialize();
+};
 	
+
+
+DataSources.prototype = {
+
 	initialize: function() {
 		// binding
 		var $this = this;
 		// set the array of configuration
 		this.datasources = [];
 		// get the data sources
-		document.id('jform_params_data_source').getElements('option').each(function(item, i) {
-			var value = item.getProperty('value');
+		jQuery('#jform_params_data_source').find('option').each(function(i, item) {
+			var value = jQuery(item).val();
 			$this.datasources.push(value);
 		});
-		// hide hidden fields
-		document.getElements('.gk-hidden-field').each(function(field, i) {
-			field.getParent().setStyle('display', 'none');
-		});
+		
 		
 		// init
 		this.changeValue();
-		
-		// add events
-		document.id('jform_params_data_source').addEvents({
-			'change': function() { $this.changeValue(); },		
-			'focus': function() { $this.changeValue(); },
-			'blur': function() { $this.changeValue(); }
-		});
+		jQuery('#jform_params_data_source').on('blur', function() { $this.changeValue() });
+		jQuery('#jform_params_data_source').on('focus', function() { $this.changeValue() });
+		jQuery('#jform_params_data_source').on('change', function() { $this.changeValue() });
 	},
 	
 	changeValue: function() {
 		// binding
 		var $this = this;
 		// get the data source value ..
-		var data_source_value = document.id('jform_params_data_source').get('value');
-		$this.datasources.each(function(source) {
-			if(source != data_source_value && document.id('jform_params_'+source)) {
-				document.id('jform_params_'+source).getParent().setStyle('display', 'none');	
+		var data_source_value = jQuery('#jform_params_data_source').val();
+		jQuery($this.datasources).each(function(i,source) {
+			if(source != data_source_value && jQuery('#jform_params_'+source)) {
+				jQuery('#jform_params_'+source).parents().eq(1).css('display', 'none');	
 			} else if(document.id('jform_params_'+source)) {
-				document.id('jform_params_'+source).getParent().setStyle('display', 'block');
+				jQuery('#jform_params_'+source).parents().eq(1).css('display', 'block');
 			}
 		});	
-		
 		// hide unsupported XML/JSON options
 		if(data_source_value == 'xml_file' || data_source_value == 'json_file') {
-			document.id('jform_params_news_amount').getParent().setStyle('display', 'none');
-			document.id('jform_params_news_sort_value').getParent().setStyle('display', 'none');
-			document.id('jform_params_news_sort_order').getParent().setStyle('display', 'none');			
-			document.id('jform_params_news_since').getParent().setStyle('display', 'none');	
-			document.id('jform_params_news_in').getParent().setStyle('display', 'none');	
-			document.id('jform_params_news_frontpage').getParent().setStyle('display', 'none');
-			document.id('jform_params_unauthorized').getParent().setStyle('display', 'none');
-			document.id('jform_params_only_frontpage').getParent().setStyle('display', 'none');
-			document.id('jform_params_startposition').getParent().setStyle('display', 'none');
+			jQuery('#jform_params_news_amount').parents().eq(1).css('display', 'none');
+			jQuery('#jform_params_news_sort_value').parents().eq(1).css('display', 'none');
+			jQuery('#jform_params_news_sort_order').parents().eq(1).css('display', 'none');			
+			jQuery('#jform_params_news_since').parents().eq(2).css('display', 'none');	
+			jQuery('#jform_params_news_in').parents().eq(1).css('display', 'none');	
+			jQuery('#jform_params_news_frontpage').parents().eq(1).css('display', 'none');
+			jQuery('#jform_params_unauthorized').parents().eq(1).css('display', 'none');
+			jQuery('#jform_params_only_frontpage').parents().eq(1).css('display', 'none');
+			jQuery('#jform_params_startposition').parents().eq(1).css('display', 'none');
 		} else {
-			document.id('jform_params_news_amount').getParent().setStyle('display', 'block');
-			document.id('jform_params_news_sort_value').getParent().setStyle('display', 'block');
-			document.id('jform_params_news_sort_order').getParent().setStyle('display', 'block');			
-			document.id('jform_params_news_since').getParent().setStyle('display', 'block');
-			document.id('jform_params_news_in').getParent().setStyle('display', 'block');	
-			document.id('jform_params_news_frontpage').getParent().setStyle('display', 'block');
-			document.id('jform_params_unauthorized').getParent().setStyle('display', 'block');
-			document.id('jform_params_only_frontpage').getParent().setStyle('display', 'block');
-			document.id('jform_params_startposition').getParent().setStyle('display', 'block');
+			jQuery('#jform_params_news_amount').parents().eq(1).css('display', 'block');
+			jQuery('#jform_params_news_sort_value').parents().eq(1).css('display', 'block');
+			jQuery('#jform_params_news_sort_order').parents().eq(1).css('display', 'block');			
+			jQuery('#jform_params_news_since').parents().eq(2).css('display', 'block');
+			jQuery('#jform_params_news_in').parents().eq(1).css('display', 'block');	
+			jQuery('#jform_params_news_frontpage').parents().eq(1).css('display', 'block');
+			jQuery('#jform_params_unauthorized').parents().eq(1).css('display', 'block');
+			jQuery('#jform_params_only_frontpage').parents().eq(1).css('display', 'block');
+			jQuery('#jform_params_startposition').parents().eq(1).css('display', 'block');
 		}
 	}
-});
+};

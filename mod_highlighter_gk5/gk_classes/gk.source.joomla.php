@@ -108,10 +108,11 @@ class NH_GK5_Joomla_Source {
 		$db = JFactory::getDBO();
 		$access_con = '';
 		
+		$user = JFactory::getUser();	
 		if($config['unauthorized'] == '0') {
-			$access_con = ' AND content.access IN ('. implode(',', JFactory::getUser()->authorisedLevels()) .') ';
+			$access_con = ' AND content.access IN ('. implode(',', $user->getAuthorisedViewLevels()) .') ';
 		}
-		$date = JFactory::getDate("now", $config['time_offset']);
+		$date = JFactory::getDate($config['time_offset'].' hour '.date('Y-m-d H:i:s', strtotime('now')));
 		$now  = $date->toSql(true);
 		$nullDate = $db->getNullDate();
 		// if some data are available

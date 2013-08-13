@@ -11,7 +11,6 @@ class JFormFieldAsset extends JFormField {
    			$doc->addScript(JURI::root().$this->element['path'].'class.datasources.js');
    			$doc->addScript(JURI::root().$this->element['path'].'class.animations.js');
             $doc->addScript(JURI::root().$this->element['path'].'main.js');
-            $doc->addScript(JURI::root().$this->element['path'].'/colorpicker/DynamicColorPicker.js');
             $doc->addStyleSheet(JURI::root().$this->element['path'].'style.css');        
             return null;
         }

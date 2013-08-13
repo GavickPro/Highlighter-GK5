@@ -1,8 +1,8 @@
 <?php
 /**
 * JElementK2Tags - additional element for module XML file
-* @package Highlighter GK4
-* @Copyright (C) 2009-2011 Gavick.com
+* @package Highlighter GK5
+* @Copyright (C) 2009-2013 Gavick.com
 * @ All rights reserved
 * @ Joomla! is Free Software
 * @ Released under GNU/GPL License : http://www.gnu.org/copyleft/gpl.html
@@ -30,7 +30,13 @@ class JFormFieldK2Tags extends JFormFieldList {
 		// Initialize JavaScript field attributes.
 		$attr .= $this->element['onchange'] ? ' onchange="'.(string) $this->element['onchange'].'"' : '';
 		// Get the field options.
-		$options = (array) $this->getOptions();
+		$path = JPath::clean(JPATH_BASE.DS.'components'.DS.'com_k2');
+		if (! file_exists($path)) {
+			// do nothing because K2 is not installed
+		} else {
+			$options = (array) $this->getOptions();
+		}	
+		
 		// Create a read-only list (no name) with a hidden input to store the value.
 		if ((string) $this->element['readonly'] == 'true') {
 			$html[] = JHtml::_('select.genericlist', $options, '', trim($attr), 'value', 'text', $this->value, $this->id);
