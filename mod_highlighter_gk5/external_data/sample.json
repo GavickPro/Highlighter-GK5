@@ -1,0 +1,12 @@
+[
+	{
+		"url": "http://www.gavick.com",
+		"title": "Lorem ipsum",
+		"text": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla."
+	},
+	{
+		"url": "http://www.gavick.com",
+		"title": "Lorem ipsum SECOND",
+		"text": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla."
+	}
+]

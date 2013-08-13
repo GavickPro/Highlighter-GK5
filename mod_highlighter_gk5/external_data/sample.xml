@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<articles>
+	<article>
+		<url>http://www.gavick.com</url>
+		<title>Lorem ipsum</title>
+		<text><![CDATA[Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla.]]></text>
+	</article>
+	<article>
+		<url>http://www.gavick.com</url>
+		<title>Lorem ipsum 2</title>
+		<text><![CDATA[Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla.]]></text>
+	</article>
+</articles>
