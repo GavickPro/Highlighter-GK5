@@ -149,7 +149,7 @@ class NH_GK5_Helper {
 		        } else if($this->config["data_source"] == "json_file" || $this->config["data_source"] == "xml_file") {
 		        	$news_link = $this->content[$i]['url'];
 		        } else {
-   					$news_link = JRoute::_(ContentHelperRoute::getArticleRoute($this->content[$i]['id'], $this->content[$i]['cid']));
+   					$news_link = JRoute::_(ContentHelperRoute::getArticleRoute($this->content[$i]['id'], $this->content[$i]['cid'],$this->content[$i]['language']));
                 }
                 // REMOVE XHTML		
                 if($this->config['clean_xhtml'] == TRUE) $news_text = strip_tags($news_text);
