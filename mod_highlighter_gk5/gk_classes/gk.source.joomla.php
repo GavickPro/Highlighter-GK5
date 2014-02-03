@@ -159,6 +159,7 @@ class NH_GK5_Joomla_Source {
 			content.created AS date, 
 			content.publish_up AS date_publish,
 			content.hits AS hits,
+			content.language AS language,
 			content.featured AS frontpage				
 		FROM 
 			#__content AS content 
