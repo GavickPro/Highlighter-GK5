@@ -146,10 +146,18 @@
                 </field>
                 <field name="desc_limit" class="short text-limit" type="text" default="40" size="5" label="MOD_HIGHLIGHTER_GK5_DESC_MAX_AMOUNT" description=""/>
                 <field name="gk_line_1" type="line" text="MOD_HIGHLIGHTER_GK5_INTERFACE" />
+                
                 <field name="interface" type="list" class="gk_switch" default="1" label="MOD_HIGHLIGHTER_GK5_INTERFACE" description="MOD_HIGHLIGHTER_GK5_INTERFACE_DESC">
                          <option value="0">MOD_HIGHLIGHTER_GK5_DISABLED</option>
                          <option value="1">MOD_HIGHLIGHTER_GK5_ENABLED</option>
                  </field> 
+                 
+                <field name="interface_pos" type="list" class="gk_list" default="left" label="MOD_HIGHLIGHTER_GK5_INTERFACE_POS" description="">
+                         <option value="left">MOD_HIGHLIGHTER_GK5_INTERFACE_LEFT</option>
+                         <option value="right">MOD_HIGHLIGHTER_GK5_INTERFACE_RIGHT</option>
+                 </field>
+                 
+                 
                  <field name="interface_bg" type="text" default="#819510" class="color-field" size="8" label="MOD_HIGHLIGHTER_GK5_INTERFACE_BG" description="MOD_HIGHLIGHTER_GK5_INTERFACE_BG_DESC"/>
                 	<field name="interface_radius" type="text" default="26" class="input-pixels" size="3" label="MOD_HIGHLIGHTER_GK5_INTERFACE_RADIUS" description="MOD_HIGHLIGHTER_GK5_INTERFACE_RADIUS_DESC"/>
                  <field name="gk_line_2" type="line" text="MOD_HIGHLIGHTER_GK5_INTROTEXT" />

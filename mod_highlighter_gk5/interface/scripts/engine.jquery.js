@@ -88,7 +88,7 @@ NHGK5.prototype = {
 				this.prev = jQuery(this.options.wrapper).find('.prev');
 				this.next = jQuery(this.options.wrapper).find('.next');
 			}
-			this.wrapper.css('margin-left', jQuery(this.options.wrapper).find('.gkHighlighterInterface').width() + 25 + "px");
+			this.wrapper.css('margin-' + jQuery(this.options.wrapper).find('.gkHighlighterInterface').attr('data-pos'), jQuery(this.options.wrapper).find('.gkHighlighterInterface').width() + 25 + "px");
 		}
 
 		if (this.wrapper.find('.nowrap')) {
