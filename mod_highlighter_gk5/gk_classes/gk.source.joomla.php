@@ -112,7 +112,12 @@ class NH_GK5_Joomla_Source {
 		if($config['unauthorized'] == '0') {
 			$access_con = ' AND content.access IN ('. implode(',', $user->getAuthorisedViewLevels()) .') ';
 		}
-		$date = JFactory::getDate($config['time_offset'].' hour '.date('Y-m-d H:i:s', strtotime('now')));
+		// check if the timezone offset is set
+		if($config['time_offset'] == 0) {
+			$date = JFactory::getDate();
+		} else {
+			$date = JFactory::getDate($config['time_offset'].' hour '.date('Y-m-d H:i:s', strtotime('now')));
+		}
 		$now  = $date->toSql(true);
 		$nullDate = $db->getNullDate();
 		// if some data are available
