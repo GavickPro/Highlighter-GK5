@@ -71,6 +71,7 @@ NHGK5.prototype = {
 		animTypes['Fx.Transitions.Elastic.easeInOut'] = 'easeInOutElastic';
 		
 		this.module = jQuery(module);
+		this.module.addClass('acitve');
 		this.options = jQuery.parseJSON(this.module.attr('data-config').replace(/'/g,"\""));
 		this.options.wrapper = module;
 		this.wrapper = jQuery(this.options.wrapper).find('.gkHighlighterWrapper');

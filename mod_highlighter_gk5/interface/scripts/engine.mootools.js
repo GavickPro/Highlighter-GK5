@@ -11,6 +11,7 @@
 window.addEvent("domready", function () {
 	$$('.gkHighlighterGK5').each(function (el, i) {
 		var config = JSON.decode(el.get('data-config'));
+		el.addClass('active');
 		new GKNewsHighligher({
 			wrapper: el,
 			speed: config.animationSpeed,
