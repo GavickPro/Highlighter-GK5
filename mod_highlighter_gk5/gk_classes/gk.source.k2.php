@@ -133,7 +133,6 @@ class NH_GK5_K2_Source {
 		if($config['unauthorized'] == '0') {
 			$access_con = ' AND content.access IN ('. implode(',', $user->getAuthorisedViewLevels()) .') ';
 		}
-		// check if the timezone offset is set
 		if($config['time_offset'] == 0) {
 			$date = JFactory::getDate();
 		} else {

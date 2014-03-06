@@ -71,6 +71,7 @@ NHGK5.prototype = {
 		animTypes['Fx.Transitions.Elastic.easeInOut'] = 'easeInOutElastic';
 		
 		this.module = jQuery(module);
+		this.module.addClass('acitve');
 		this.options = jQuery.parseJSON(this.module.attr('data-config').replace(/'/g,"\""));
 		this.options.wrapper = module;
 		this.wrapper = jQuery(this.options.wrapper).find('.gkHighlighterWrapper');
@@ -88,7 +89,7 @@ NHGK5.prototype = {
 				this.prev = jQuery(this.options.wrapper).find('.prev');
 				this.next = jQuery(this.options.wrapper).find('.next');
 			}
-			this.wrapper.css('margin-left', jQuery(this.options.wrapper).find('.gkHighlighterInterface').width() + 25 + "px");
+			this.wrapper.css('margin-' + jQuery(this.options.wrapper).find('.gkHighlighterInterface').attr('data-pos'), jQuery(this.options.wrapper).find('.gkHighlighterInterface').width() + 25 + "px");
 		}
 
 		if (this.wrapper.find('.nowrap')) {

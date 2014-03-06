@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 <div class="gkHighlighterGK5" id="gkHighlighterGK5-<?php echo $this->config['module_id']; ?>" data-config="<?php echo $config_data; ?>">
     <?php if($this->config['interface'] == 1 || $this->config['introtext'] == 1) : ?>
-    <div class="gkHighlighterInterface">
+    <div class="gkHighlighterInterface" data-pos="<?php echo $this->config['interface_pos']; ?>">
         <?php if($this->config['introtext']) : ?>
         <span class="text"><?php echo $this->config['introtext_value']; ?></span>
         <?php endif; ?>

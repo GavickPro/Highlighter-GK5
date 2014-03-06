@@ -11,6 +11,7 @@
 window.addEvent("domready", function () {
 	$$('.gkHighlighterGK5').each(function (el, i) {
 		var config = JSON.decode(el.get('data-config'));
+		el.addClass('active');
 		new GKNewsHighligher({
 			wrapper: el,
 			speed: config.animationSpeed,
@@ -47,7 +48,7 @@ var GKNewsHighligher = new Class({
 				this.prev = this.options.wrapper.getElement('.prev');
 				this.next = this.options.wrapper.getElement('.next');
 			}
-			$this.wrapper.setStyle('margin-left', this.options.wrapper.getElement('.gkHighlighterInterface').getSize().x + 25 + "px");
+			$this.wrapper.setStyle('margin-' + this.options.wrapper.getElement('.gkHighlighterInterface').getProperty('data-pos'), this.options.wrapper.getElement('.gkHighlighterInterface').getSize().x + 25 + "px");
 		}
 
 		if ($this.wrapper.getElement('.nowrap')) {
