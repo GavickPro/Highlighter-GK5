@@ -396,6 +396,7 @@ var GKNewsHighligher = new Class({
 		},$this.options.interval);
 		//
 		$this.items.each(function (elm, j) {
+			elm.setStyle('z-index', $this.items.length - j);
 			$this.effects1[j] = new Fx.Tween(elm, {
 				duration: $this.options.speed,
 				transition: Fx.Transitions[$this.options.fun[2]][$this.options.fun[3]],

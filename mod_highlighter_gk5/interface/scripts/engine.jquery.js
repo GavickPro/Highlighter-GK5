@@ -359,7 +359,7 @@ NHGK5.prototype = {
 			
 			if (j !== 0) {
 				this.animPlay = true;
-				jQuery(elm).animate({opacity: 0}, $this.options.speed, "linear", function() {
+				jQuery(elm).animate({opacity: 0, zIndex: 0}, $this.options.speed, "linear", function() {
 					$this.animPlay = false;
 				});
 			}
@@ -390,7 +390,7 @@ NHGK5.prototype = {
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					this.animPlay = true;
-					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
+					jQuery($this.items[$this.actual]).animate({opacity: 1, zIndex: 1}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});						
 					jQuery($this.items[$this.actual]).css('top', -24).animate({top: 0},  {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
@@ -405,13 +405,13 @@ NHGK5.prototype = {
 				e.preventDefault();
 				if (!$this.animPlay) {
 					this.animPlay = true;
-					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
+					jQuery($this.items[$this.actual]).animate({opacity: 0, zIndex: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
 					jQuery($this.items[$this.actual]).css('top', 0).animate({top: -24}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					this.animPlay = true;
-					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
+					jQuery($this.items[$this.actual]).animate({opacity: 1, zIndex: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
 					jQuery($this.items[$this.actual]).css('top', 24).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
@@ -783,18 +783,18 @@ NHGK5.prototype = {
 	},
 	timerFunc: function () {
 		var $this = this;
-		var height = this.items[$this.actual].getSize().y;
+		var height = jQuery(this.items[$this.actual]).height();
 		if ($this.mouseIsOver === false) {
 			if (this.options.type === 'slides') {
 				this.animPlay = true;
-				jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
+				jQuery($this.items[$this.actual]).animate({opacity: 0, zIndex: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 					$this.animPlay = false;
 				}});
 				jQuery($this.items[$this.actual]).css('top', 0).animate({top: -height}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
 				$this.actual++;
 				$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 				this.animPlay = true;
-				jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun,  complete: function() {
+				jQuery($this.items[$this.actual]).animate({opacity: 1, zIndex : 1}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun,  complete: function() {
 					$this.animPlay = false;
 				}});
 				jQuery($this.items[$this.actual]).css('top', height).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
