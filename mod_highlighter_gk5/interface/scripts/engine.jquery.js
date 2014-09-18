@@ -123,7 +123,12 @@ NHGK5.prototype = {
 			nowrap = jQuery(nowrap);
 			$this.w = 0;
 			$this.stopped = false;
-			$this.options.wrapper.find('.nowrap span').each(function(i, elmt){ $this.w += jQuery(elmt).width();});
+			$this.options.wrapper.find('.nowrap > span').each(function(i, elmt){ 
+				$this.w += jQuery(elmt).width();
+			});
+			
+			$this.w += 80;
+			
 			$this.options.wrapper.find('.gkHighlighterWrapperSub').css('overflow', 'hidden'); 
 			
 			var time = (($this.w+$this.options.wrapper.width())/$this.options.speed) * 1000;
