@@ -89,9 +89,12 @@ var GKNewsHighligher = new Class({
 
 		var nowrap = $this.options.wrapper.getElement('.nowrap');
 		$this.w = 0;
-		$this.options.wrapper.getElements('.nowrap span').each(function (elmt, i) {
+		$this.options.wrapper.getElements('.nowrap > span').each(function (elmt, i) {
 			$this.w += elmt.getSize().x;
 		});
+		
+		$this.w += 80;
+		
 		$this.options.wrapper.getElement('.gkHighlighterWrapperSub').setStyle('overflow', 'hidden');
 		var time = (($this.w + $this.options.wrapper.getSize().x) / $this.options.speed) * 1000;
 		var timeOriginal = time;
