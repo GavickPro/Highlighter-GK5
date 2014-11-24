@@ -393,6 +393,7 @@ var GKNewsHighligher = new Class({
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		$this.items[0].addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -431,12 +432,14 @@ var GKNewsHighligher = new Class({
 			$this.next.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, -24);
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					$this.effects1[$this.actual].start('opacity', 1);
 					$this.effects2[$this.actual].start('top', 24, 0);
+					$this.items[$this.actual].addClass('gk-active');
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
@@ -447,11 +450,13 @@ var GKNewsHighligher = new Class({
 			$this.prev.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, 24);
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					$this.effects1[$this.actual].start('opacity', 1);
 					$this.effects2[$this.actual].start('top', -24, 0);
+					$this.items[$this.actual].addClass('gk-active');
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
@@ -472,6 +477,7 @@ var GKNewsHighligher = new Class({
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		$this.items[0].addClass('gk-active');
 		//
 		$this.timer =  setInterval(function () {
 			$this.timerFunc();
@@ -511,12 +517,14 @@ var GKNewsHighligher = new Class({
 			$this.next.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, 24);
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					$this.effects1[$this.actual].start('opacity', 1);
 					$this.effects2[$this.actual].start('top', -24, 0);
+					$this.items[$this.actual].addClass('gk-active');
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
@@ -527,11 +535,13 @@ var GKNewsHighligher = new Class({
 			$this.prev.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, -24);
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					$this.effects1[$this.actual].start('opacity', 1);
 					$this.effects2[$this.actual].start('top', 24, 0);
+					$this.items[$this.actual].addClass('gk-active');
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
@@ -550,6 +560,7 @@ var GKNewsHighligher = new Class({
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		$this.items[0].addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -592,6 +603,7 @@ var GKNewsHighligher = new Class({
 			$this.next.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, -$this.items[$this.actual].getSize().y);
 					var counter = 0;
@@ -606,6 +618,7 @@ var GKNewsHighligher = new Class({
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					$this.effects1[$this.actual].start('opacity', 1); //
+					$this.items[$this.actual].addClass('gk-active');
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
 						$this.timerFunc();
@@ -615,6 +628,7 @@ var GKNewsHighligher = new Class({
 			$this.prev.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, -$this.items[$this.actual].getSize().y);
 					var counter = 0;
@@ -628,6 +642,7 @@ var GKNewsHighligher = new Class({
 					}
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					$this.effects1[$this.actual].start('opacity', 1);
+					$this.items[$this.actual].addClass('gk-active');
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
@@ -648,6 +663,7 @@ var GKNewsHighligher = new Class({
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		$this.items[0].addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -693,6 +709,7 @@ var GKNewsHighligher = new Class({
 			$this.next.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, $this.items[$this.actual].getSize().y);
 					var counter = 0;
@@ -708,6 +725,7 @@ var GKNewsHighligher = new Class({
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					$this.effects1[$this.actual].start('opacity', 1); //
+					$this.items[$this.actual].addClass('gk-active');
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
 						$this.timerFunc();
@@ -717,6 +735,7 @@ var GKNewsHighligher = new Class({
 			$this.prev.addEvent('click', function (e) {
 				new Event(e).stop();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.effects1[$this.actual].start('opacity', 0);
 					$this.effects2[$this.actual].start('top', 0, $this.items[$this.actual].getSize().y);
 					var counter = 0;
@@ -731,6 +750,7 @@ var GKNewsHighligher = new Class({
 
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					$this.effects1[$this.actual].start('opacity', 1); //
+					$this.items[$this.actual].addClass('gk-active');
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
 						$this.timerFunc();
