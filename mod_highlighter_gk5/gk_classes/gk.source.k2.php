@@ -191,7 +191,8 @@ class NH_GK5_K2_Source {
 			#__k2_items AS content 
 			'.$tag_join.'
 		WHERE 
-			content.published = 1
+			content.published = 1 AND
+			content.trash = 0
                 '. $access_con .'   
 		 		AND ( content.publish_up = '.$db->Quote($nullDate).' OR content.publish_up <= '.$db->Quote($now).' )
 				AND ( content.publish_down = '.$db->Quote($nullDate).' OR content.publish_down >= '.$db->Quote($now).' )
