@@ -415,7 +415,7 @@ NHGK5.prototype = {
 						$this.animPlay = false;
 					}});		
 					jQuery($this.items[$this.actual]).addClass('gk-active');				
-					jQuery($this.items[$this.actual]).css('top', -24).animate({top: 0},  {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
+					jQuery($this.items[$this.actual]).css('top', -48).animate({top: 0},  {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
@@ -431,7 +431,7 @@ NHGK5.prototype = {
 					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
-					jQuery($this.items[$this.actual]).css('top', 0).animate({top: -24}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
+					jQuery($this.items[$this.actual]).css('top', 0).animate({top: -48}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					this.animPlay = true;
 					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
@@ -494,7 +494,7 @@ NHGK5.prototype = {
 						$this.animPlay = false;
 					}});
 					jQuery($this.items[$this.actual]);
-					jQuery($this.items[$this.actual]).animate({top: -24}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
+					jQuery($this.items[$this.actual]).animate({top: -48}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					this.animPlay = true;
@@ -525,7 +525,7 @@ NHGK5.prototype = {
 						$this.animPlay = false;
 					}});
 					jQuery($this.items[$this.actual]).addClass('gk-active');
-					jQuery($this.items[$this.actual]).css('top', -24).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
+					jQuery($this.items[$this.actual]).css('top', -48).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
