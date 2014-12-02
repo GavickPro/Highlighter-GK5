@@ -47,7 +47,7 @@ class NH_GK5_Helper {
 				$engine_founded = true;
 			}
 			//
-			if(!$engine_founded || $this->config['include_jquery'] == 1) {
+			if(!$engine_founded && $this->config['include_jquery'] == 1) {
 				$doc->addScript('https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js');
 			}
 			$uri = JURI::getInstance();
