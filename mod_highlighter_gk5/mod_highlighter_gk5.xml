@@ -2,12 +2,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
         <name>Highlighter GK5</name>
         <author>GavickPro</author>
-        <creationDate>06/03/2014</creationDate>
-        <copyright>Copyright (C) 2011-2014 GavickPro. All rights reserved.</copyright>
+        <creationDate>12/02/2015</creationDate>
+        <copyright>Copyright (C) 2011-2015 GavickPro. All rights reserved.</copyright>
         <license>GNU General Public License version 2 or later</license>
         <authorEmail>info@gavick.com</authorEmail>
         <authorUrl>www.gavickpro.com</authorUrl>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
         <description><![CDATA[
         	<style type="text/css">
         	span.readonly { padding: 10px; font-family: Arial; font-size:13px !important; font-weight: normal !important; text-align: justify; color: #4d4d4d; line-height: 24px; }
@@ -18,7 +18,7 @@
         	span.readonly p.homepage { margin-top: 30px }
         	span.readonly p.license { border-top: 1px solid #eee; font-size: 11px; margin: 30px 26px 0; padding: 6px 0; }
         	</style>
-        	<span class="readonly"><h1>Highlighter GK5 <small>ver. 1.1.1</small></h1><p>GK5 is new generation of our extensions dedicated to Joomla! 2.5+.</p><p>Highlighter GK5 is news rotator which allows to present chosen articles headers in an attractive way. Thanks to multiple options, users may adjust it to their needs. Additionally, Highlighter GK5 can be integrated with any source of information.</p> <p class='homepage'><a href='https://www.gavick.com/highlighter-gk5.html' target='_blank'>Learn more at the Highlighter GK5 project website.</a></p><p class='license'>Highlighter GK5 is released under the <a target="_blank" href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License version 2 or later.</a></p></span>
+        	<span class="readonly"><h1>Highlighter GK5 <small>ver. 1.1.2</small></h1><p>GK5 is new generation of our extensions dedicated to Joomla! 2.5+.</p><p>Highlighter GK5 is news rotator which allows to present chosen articles headers in an attractive way. Thanks to multiple options, users may adjust it to their needs. Additionally, Highlighter GK5 can be integrated with any source of information.</p> <p class='homepage'><a href='https://www.gavick.com/highlighter-gk5.html' target='_blank'>Learn more at the Highlighter GK5 project website.</a></p><p class='license'>Highlighter GK5 is released under the <a target="_blank" href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License version 2 or later.</a></p></span>
         ]]>
         </description>
         
