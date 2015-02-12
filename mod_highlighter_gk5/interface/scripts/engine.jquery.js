@@ -444,6 +444,7 @@ NHGK5.prototype = {
 		//
 		jQuery($this.items).each(function(j, elm) {
 			jQuery(elm).css('display', 'block');
+			jQuery(elm).css('z-index', $this.items.length - j);
 			
 			if (j !== 0) {
 				this.animPlay = true;
