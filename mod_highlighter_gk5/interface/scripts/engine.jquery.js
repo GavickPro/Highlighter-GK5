@@ -166,6 +166,7 @@ NHGK5.prototype = {
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		jQuery($this.items[0]).addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -191,11 +192,13 @@ NHGK5.prototype = {
 			$this.next.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').addClass('fadeOut');
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					clearTimeout($this.timer);
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').css('opacity', 1);
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					$this.timer = setInterval(function () {
 						$this.timerFunc();
 					},$this.options.interval);
@@ -204,10 +207,12 @@ NHGK5.prototype = {
 			$this.prev.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').addClass('fadeOut');
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					clearTimeout($this.timer);
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').css('opacity', 1);
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					$this.timer = setInterval(function () {
 						$this.timerFunc();
 					},$this.options.interval);
@@ -223,6 +228,7 @@ NHGK5.prototype = {
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		jQuery($this.items[0]).addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -248,12 +254,14 @@ NHGK5.prototype = {
 			$this.next.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').addClass('fadeOutLeft');
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					clearTimeout($this.timer);
 					jQuery($this.items[$this.actual]).css('opacity', 0);
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem');
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					setTimeout(function () {
 						jQuery($this.items[$this.actual]).addClass('fadeInLeft');
 					}, $this.options.speed);
@@ -265,11 +273,13 @@ NHGK5.prototype = {
 			$this.prev.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').addClass('fadeOutLeft');
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					clearTimeout($this.timer);
 					jQuery($this.items[$this.actual]).css('opacity', 0);
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem');
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					setTimeout(function () {
 						jQuery($this.items[$this.actual]).addClass('fadeInLeft');
 					},$this.options.speed);
@@ -289,6 +299,7 @@ NHGK5.prototype = {
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		jQuery($this.items[0]).addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -311,6 +322,7 @@ NHGK5.prototype = {
 			$this.next.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').addClass('flipOutX').css('opacity', 0);
 					$this.actual++;
 					if ($this.actual > $this.items.length - 1) {
@@ -319,7 +331,7 @@ NHGK5.prototype = {
 					clearTimeout($this.timer);
 
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem');
-
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					setTimeout(function () {
 						jQuery($this.items[$this.actual]).addClass('flipInX').css('opacity', 1);
 						console.log('added');
@@ -332,10 +344,12 @@ NHGK5.prototype = {
 			$this.prev.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem').addClass('flipOutX').css('opacity', 0);
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					clearTimeout($this.timer);
 					jQuery($this.items[$this.actual]).attr('class', 'gkHighlighterItem');
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					setTimeout(function () {
 						jQuery($this.items[$this.actual]).addClass('flipInX').css('opacity', 1);
 					},$this.options.speed);
@@ -350,6 +364,7 @@ NHGK5.prototype = {
 	slides: function () {
 		var $this = this;
 		$this.items = jQuery(this.options.wrapper).find('.gkHighlighterItem');
+		jQuery($this.items[0]).addClass('gk-active');
 		
 		$this.actual = 0;
 		$this.mouseIsOver = false;
@@ -361,90 +376,6 @@ NHGK5.prototype = {
 		//
 		jQuery($this.items).each(function(j, elm) {
 			jQuery(elm).css('display', 'block');
-			
-			if (j !== 0) {
-				this.animPlay = true;
-				jQuery(elm).animate({opacity: 0, zIndex: 0}, $this.options.speed, "linear", function() {
-					$this.animPlay = false;
-				});
-			}
-			if ($this.options.type !== 'linear'){ /*$this.effects2[j].set('top', 0);*/
-				jQuery(elm).animate({top: 0}, $this.options.speed, "linear");
-			}
-		});
-		//
-		if ($this.options.mouseOver) {
-			$this.wrapper.mouseenter(function () {
-				$this.mouseIsOver = true;
-			});
-			$this.wrapper.mouseleave(function () {
-				$this.mouseIsOver = false;
-			});
-		}
-		
-		if ($this.next) {
-			$this.next.click(function (e) {
-				e.preventDefault();
-				if (!$this.animPlay) {
-					this.animPlay = true;
-					jQuery($this.items[$this.actual]).css('top', 0).animate({opacity: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
-						$this.animPlay = false;
-					}});
-					jQuery($this.items[$this.actual]);
-					jQuery($this.items[$this.actual]).animate({top: 24}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
-					$this.actual++;
-					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
-					this.animPlay = true;
-					jQuery($this.items[$this.actual]).animate({opacity: 1, zIndex: 1}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
-						$this.animPlay = false;
-					}});						
-					jQuery($this.items[$this.actual]).css('top', -48).animate({top: 0},  {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
-					//
-					clearTimeout($this.timer);
-					$this.timer = setInterval(function () {
-						$this.timerFunc();
-					},$this.options.interval);
-				}
-			});
-			$this.prev.click(function (e) {
-				e.preventDefault();
-				if (!$this.animPlay) {
-					this.animPlay = true;
-					jQuery($this.items[$this.actual]).animate({opacity: 0, zIndex: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
-						$this.animPlay = false;
-					}});
-					jQuery($this.items[$this.actual]).css('top', 0).animate({top: -48}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
-					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
-					this.animPlay = true;
-					jQuery($this.items[$this.actual]).animate({opacity: 1, zIndex: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
-						$this.animPlay = false;
-					}});
-					jQuery($this.items[$this.actual]).css('top', 24).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
-					//
-					clearTimeout($this.timer);
-					$this.timer = setInterval(function () {
-						$this.timerFunc();
-					},$this.options.interval);
-				}
-			});
-		}
-	},
-	// slides to top animation
-	slidesBottom: function () {
-		var $this = this;
-		$this.items = jQuery(this.options.wrapper).find('.gkHighlighterItem');
-		
-		$this.actual = 0;
-		$this.mouseIsOver = false;
-		$this.animPlay = false;
-		//
-		$this.timer = setInterval(function () {
-			$this.timerFunc();
-		}, $this.options.interval);
-		//
-		jQuery($this.items).each(function(j, elm) {
-			jQuery(elm).css('display', 'block');
-			jQuery(elm).css('z-index', $this.items.length - j);
 			
 			if (j !== 0) {
 				this.animPlay = true;
@@ -471,17 +402,106 @@ NHGK5.prototype = {
 				e.preventDefault();
 				if (!$this.animPlay) {
 					this.animPlay = true;
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).css('top', 0).animate({opacity: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
 					jQuery($this.items[$this.actual]);
-					jQuery($this.items[$this.actual]).animate({top: -48}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
+					jQuery($this.items[$this.actual]).animate({top: 24}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					this.animPlay = true;
 					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
-					}});						
+					}});		
+					jQuery($this.items[$this.actual]).addClass('gk-active');				
+					jQuery($this.items[$this.actual]).css('top', -24).animate({top: 0},  {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
+					//
+					clearTimeout($this.timer);
+					$this.timer = setInterval(function () {
+						$this.timerFunc();
+					},$this.options.interval);
+				}
+			});
+			$this.prev.click(function (e) {
+				e.preventDefault();
+				if (!$this.animPlay) {
+					this.animPlay = true;
+					$this.items.addClass('gk-active');
+					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
+						$this.animPlay = false;
+					}});
+					jQuery($this.items[$this.actual]).css('top', 0).animate({top: -24}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
+					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
+					this.animPlay = true;
+					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
+						$this.animPlay = false;
+					}});
+					jQuery($this.items[$this.actual]).addClass('gk-active');
+					jQuery($this.items[$this.actual]).css('top', 24).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
+					//
+					clearTimeout($this.timer);
+					$this.timer = setInterval(function () {
+						$this.timerFunc();
+					},$this.options.interval);
+				}
+			});
+		}
+	},
+	// slides to top animation
+	slidesBottom: function () {
+		var $this = this;
+		$this.items = jQuery(this.options.wrapper).find('.gkHighlighterItem');
+		jQuery($this.items[0]).addClass('gk-active');
+		$this.actual = 0;
+		$this.mouseIsOver = false;
+		$this.animPlay = false;
+		//
+		$this.timer = setInterval(function () {
+			$this.timerFunc();
+		}, $this.options.interval);
+		//
+		jQuery($this.items).each(function(j, elm) {
+			jQuery(elm).css('display', 'block');
+			jQuery(elm).css('z-index', $this.items.length - j);
+			if (j !== 0) {
+				this.animPlay = true;
+				jQuery(elm).animate({opacity: 0}, $this.options.speed, "linear", function() {
+					$this.animPlay = false;
+				});
+			}
+			if ($this.options.type !== 'linear'){ /*$this.effects2[j].set('top', 0);*/
+				jQuery(elm).animate({top: 0}, $this.options.speed, "linear");
+			}
+		});
+		//
+		if ($this.options.mouseOver) {
+			$this.wrapper.mouseenter(function () {
+				$this.mouseIsOver = true;
+			});
+			$this.wrapper.mouseleave(function () {
+				$this.mouseIsOver = false;
+			});
+		}
+		
+		if ($this.next) {
+			$this.next.click(function (e) {
+				e.preventDefault();
+				if (!$this.animPlay) {
+					this.animPlay = true;
+					$this.items.removeClass('gk-active');
+					jQuery($this.items[$this.actual]).css('top', 0).animate({opacity: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
+						$this.animPlay = false;
+					}});
+					jQuery($this.items[$this.actual]);
+					jQuery($this.items[$this.actual]).animate({top: -24}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
+					$this.actual++;
+					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
+					this.animPlay = true;
+					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
+						$this.animPlay = false;
+					}});	
+					jQuery($this.items[$this.actual]).addClass('gk-active');					
 					jQuery($this.items[$this.actual]).css('top', 24).animate({top: 0},  {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
 					//
 					clearTimeout($this.timer);
@@ -494,6 +514,7 @@ NHGK5.prototype = {
 				e.preventDefault();
 				if (!$this.animPlay) {
 					this.animPlay = true;
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
@@ -503,7 +524,8 @@ NHGK5.prototype = {
 					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
-					jQuery($this.items[$this.actual]).css('top', -48).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
+					jQuery($this.items[$this.actual]).addClass('gk-active');
+					jQuery($this.items[$this.actual]).css('top', -24).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
 					//
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
@@ -532,6 +554,7 @@ NHGK5.prototype = {
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		jQuery($this.items[0]).addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -560,12 +583,14 @@ NHGK5.prototype = {
 			$this.next.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.actual++;
-					$this.barCounter++;
+					$this.barCounter++;	
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					var rotation = 'rotateX(' + $this.barCounter * -90 + 'deg)';
 					clearTimeout($this.timer);
 					$this.setRotation(rotation);
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					//
 					$this.timer = setInterval(function () {
 						$this.timerFunc();
@@ -575,12 +600,14 @@ NHGK5.prototype = {
 			$this.prev.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					$this.actual--;
 					$this.barCounter--;
 					if ($this.actual > $this.items.length - 1) {
 						$this.actual = 0;
 					}
 					var rotation = 'rotateX(' + $this.barCounter * -90 + 'deg)';
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					clearTimeout($this.timer);
 					$this.setRotation(rotation);
 					//
@@ -599,6 +626,7 @@ NHGK5.prototype = {
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		jQuery($this.items[0]).addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -624,6 +652,7 @@ NHGK5.prototype = {
 				e.preventDefault();
 				if (!$this.animPlay) {
 					this.animPlay = true;
+					$this.items.removeClass('gk-active');
 					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
@@ -641,6 +670,7 @@ NHGK5.prototype = {
 					}
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					this.animPlay = true;
 					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
@@ -654,6 +684,7 @@ NHGK5.prototype = {
 			$this.prev.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					this.animPlay = true;
 					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
@@ -676,6 +707,7 @@ NHGK5.prototype = {
 					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					clearTimeout($this.timer);
 					$this.timer = setInterval(function () {
 						$this.timerFunc();
@@ -697,6 +729,7 @@ NHGK5.prototype = {
 		$this.actual = 0;
 		$this.mouseIsOver = false;
 		$this.animPlay = false;
+		jQuery($this.items[0]).addClass('gk-active');
 		//
 		$this.timer = setInterval(function () {
 			$this.timerFunc();
@@ -721,6 +754,7 @@ NHGK5.prototype = {
 			$this.next.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					this.animPlay = true;
 					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
@@ -740,6 +774,7 @@ NHGK5.prototype = {
 					$this.actual++;
 					$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 					this.animPlay = true;
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
@@ -752,6 +787,7 @@ NHGK5.prototype = {
 			$this.prev.click(function (e) {
 				e.preventDefault();
 				if (!$this.animPlay) {
+					$this.items.removeClass('gk-active');
 					this.animPlay = true;
 					jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
@@ -768,9 +804,10 @@ NHGK5.prototype = {
 					for (i = 0; i < $this.actual; i++) {
 						jQuery($this.items[i]).css('z-index', jQuery($this.items[$this.items.length - 1]).css('z-index') - 1 - i);
 					}
-
+			
 					($this.actual === 0) ? $this.actual = $this.items.length - 1 : $this.actual--;
 					this.animPlay = true;
+					jQuery($this.items[$this.actual]).addClass('gk-active');
 					jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 						$this.animPlay = false;
 					}});
@@ -789,18 +826,18 @@ NHGK5.prototype = {
 	},
 	timerFunc: function () {
 		var $this = this;
-		var height = jQuery(this.items[$this.actual]).height();
+		var height = this.items[$this.actual].getSize().y;
 		if ($this.mouseIsOver === false) {
 			if (this.options.type === 'slides') {
 				this.animPlay = true;
-				jQuery($this.items[$this.actual]).animate({opacity: 0, zIndex: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
+				jQuery($this.items[$this.actual]).animate({opacity: 0}, {queue: false, duration: $this.options.speed, easing : $this.options.fun,  complete: function() {
 					$this.animPlay = false;
 				}});
 				jQuery($this.items[$this.actual]).css('top', 0).animate({top: -height}, {queue: false, duration: parseInt($this.options.speed, 10), easing : $this.options.fun});
 				$this.actual++;
 				$this.actual = ($this.actual > $this.items.length - 1) ? 0 : $this.actual;
 				this.animPlay = true;
-				jQuery($this.items[$this.actual]).animate({opacity: 1, zIndex : 1}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun,  complete: function() {
+				jQuery($this.items[$this.actual]).animate({opacity: 1}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun,  complete: function() {
 					$this.animPlay = false;
 				}});
 				jQuery($this.items[$this.actual]).css('top', height).animate({top: 0}, {queue: false, duration: parseInt($this.options.speed,10), easing : $this.options.fun});
