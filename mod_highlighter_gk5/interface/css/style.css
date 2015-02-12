@@ -26,6 +26,10 @@ a:active, a:focus { outline:0; }
 .gkHighlighterWrapper .nowrap { width: 100000px; position: absolute; left: -99999em; }
 .gkHighlighterWrapper .gkHighlighterItem { position: absolute; top:0; width:100%; left:0}
 
+.gkHighlighterWrapper .gkHighlighterItem.gk-active {
+	z-index: 100;
+}
+
 @-webkit-keyframes flipInX {
     0% {
         -webkit-transform: perspective(400px) rotateX(90deg);
