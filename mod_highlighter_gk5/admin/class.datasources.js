@@ -36,7 +36,7 @@ DataSources.prototype = {
 		jQuery($this.datasources).each(function(i,source) {
 			if(source != data_source_value && jQuery('#jform_params_'+source)) {
 				jQuery('#jform_params_'+source).parents().eq(1).css('display', 'none');	
-			} else if(document.id('jform_params_'+source)) {
+			} else if(jQuery('#jform_params_'+source)) {
 				jQuery('#jform_params_'+source).parents().eq(1).css('display', 'block');
 			}
 		});	
