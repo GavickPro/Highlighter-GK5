@@ -148,7 +148,7 @@ NHGK5.prototype = {
 		    }
 		
 			    tick();
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			nowrap.mouseenter(function () {
 				$this.stopped = true;
 			});
@@ -180,7 +180,7 @@ NHGK5.prototype = {
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
@@ -242,7 +242,7 @@ NHGK5.prototype = {
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
@@ -310,7 +310,7 @@ NHGK5.prototype = {
 			if (j !== 0) { jQuery(elm).css('opacity', 0);}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
@@ -388,7 +388,7 @@ NHGK5.prototype = {
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
@@ -475,7 +475,7 @@ NHGK5.prototype = {
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
@@ -571,7 +571,7 @@ NHGK5.prototype = {
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
@@ -639,7 +639,7 @@ NHGK5.prototype = {
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
@@ -742,7 +742,7 @@ NHGK5.prototype = {
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.mouseenter(function () {
 				$this.mouseIsOver = true;
 			});
