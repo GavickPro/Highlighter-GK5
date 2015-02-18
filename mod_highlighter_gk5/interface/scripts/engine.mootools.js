@@ -106,7 +106,7 @@ var GKNewsHighligher = new Class({
 				effect.start('margin-left', w, -$this.w);
 			}
 		});
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			nowrap.addEvent("mouseenter", function () {
 				effect.pause();
 			});
@@ -138,7 +138,7 @@ var GKNewsHighligher = new Class({
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
@@ -211,7 +211,7 @@ var GKNewsHighligher = new Class({
 			
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
@@ -279,7 +279,7 @@ var GKNewsHighligher = new Class({
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
@@ -343,7 +343,7 @@ var GKNewsHighligher = new Class({
 			}
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
@@ -419,7 +419,7 @@ var GKNewsHighligher = new Class({
 			if ($this.options.type !== 'linear') $this.effects2[j].set('top', 0);
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
@@ -498,7 +498,7 @@ var GKNewsHighligher = new Class({
 			if ($this.options.type !== 'linear') $this.effects2[j].set('top', 0);
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
@@ -579,7 +579,7 @@ var GKNewsHighligher = new Class({
 			if (j !== 0) $this.effects1[j].set('opacity', 0);
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
@@ -680,7 +680,7 @@ var GKNewsHighligher = new Class({
 			});
 		});
 		//
-		if ($this.options.mouseOver) {
+		if ($this.options.mouseOver == 'true') {
 			$this.wrapper.addEvent("mouseenter", function () {
 				$this.mouseIsOver = true;
 			});
