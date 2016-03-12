@@ -826,7 +826,7 @@ NHGK5.prototype = {
 	},
 	timerFunc: function () {
 		var $this = this;
-		var height = this.items[$this.actual].getSize().y;
+		var height = jQuery(this.items[$this.actual]).outerHeight();
 		if ($this.mouseIsOver === false) {
 			if (this.options.type === 'slides') {
 				this.animPlay = true;
