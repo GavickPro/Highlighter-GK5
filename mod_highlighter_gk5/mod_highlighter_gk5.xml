@@ -241,7 +241,7 @@
 						<option value="1">MOD_HIGHLIGHTER_GK5_FORCEENABLED</option>
                         <option value="0">MOD_HIGHLIGHTER_GK5_FORCEDISABLED</option>
                 </field> 
-                <field name="engine_mode" type="radio" class="btn-group" default="mootools" label="MOD_HIGHLIGHTER_GK5_ENGINE_MODE" description="MOD_HIGHLIGHTER_GK5_ENGINE_MODE_DESC">
+                <field name="engine_mode" type="radio" class="btn-group" default="jquery" label="MOD_HIGHLIGHTER_GK5_ENGINE_MODE" description="MOD_HIGHLIGHTER_GK5_ENGINE_MODE_DESC">
 						<option value="mootools">MOD_HIGHLIGHTER_GK5_MODE_MOOTOOLS</option>
 						<option value="jquery">MOD_HIGHLIGHTER_GK5_MODE_JQUERY</option>
 				</field> 
