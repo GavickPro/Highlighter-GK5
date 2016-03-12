@@ -20,9 +20,8 @@ a:active, a:focus { outline:0; }
 .gkHighlighterWrapperSub {
 	position: relative;
 	min-height: 30px;
-	opacity: 0;
+	opacity: 1;
 }
-.active .gkHighlighterWrapperSub { opacity: 1; }
 .gkHighlighterWrapper .nowrap { width: 100000px; position: absolute; left: -99999em; }
 .gkHighlighterWrapper .gkHighlighterItem { position: absolute; top:0; width:100%; left:0}
 
