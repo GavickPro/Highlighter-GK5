@@ -65,7 +65,7 @@ class NH_GK5_K2_Source {
 					c.id = content.catid 	
 				'.$tag_join.' 
 				WHERE 
-					( '.$where.' ) 
+					(1=1 AND '.$where.' ) 
 					AND 
 					c.published = 1
 		        ';	
@@ -245,6 +245,7 @@ class NH_GK5_K2_Source {
 				#__k2_rating AS content_rating 
 				ON content_rating.itemID = content.id
 		WHERE 
+			1=1 AND 
 			'.$second_sql_where.'
 		ORDER BY 
 			'.$order_options.'
