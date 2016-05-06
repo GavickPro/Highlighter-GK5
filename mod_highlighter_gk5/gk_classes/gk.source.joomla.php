@@ -52,7 +52,7 @@ class NH_GK5_Joomla_Source {
 					ON 
 					c.id = content.catid 	
 				WHERE 
-					( '.$where.' ) 
+					(1=1 AND '.$where.' ) 
 					AND 
 					c.extension = '.$db->quote('com_content').'
 					AND 
@@ -227,6 +227,7 @@ class NH_GK5_Joomla_Source {
 				#__content_rating AS content_rating 
 				ON content_rating.content_id = content.id
 		WHERE 
+			1=1 AND
 			'.$second_sql_where.'
 		ORDER BY 
 			'.$order_options.'
