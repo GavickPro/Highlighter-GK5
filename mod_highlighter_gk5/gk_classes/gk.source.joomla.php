@@ -261,6 +261,10 @@ class NH_GK5_Joomla_Source {
 					}
 				}
 				// merge the new data to the array of items data
+				if(!is_array($content[$pos])) {
+					$content[$pos] = array();
+				}
+				
 				$content[$pos] = array_merge($content[$pos], (array) $item);
 			}
 		}
