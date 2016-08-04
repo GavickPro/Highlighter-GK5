@@ -199,6 +199,11 @@ class NH_GK5_Joomla_Source {
 		for($i = 0; $i < count($content); $i++) {
 			$second_sql_where .= (($i != 0) ? ' OR ' : '') . ' content.id = ' . $content[$i]['iid'];
 		}
+		
+		if($second_sql_where !== '') {
+			$second_sql_where = ' AND ' . $second_sql_where;
+		}
+		
 		// second SQL query to get rest of the data and avoid the DISTINCT
 		$second_query_news = '
 		SELECT
@@ -227,7 +232,7 @@ class NH_GK5_Joomla_Source {
 				#__content_rating AS content_rating 
 				ON content_rating.content_id = content.id
 		WHERE 
-			1=1 AND
+			1=1 
 			'.$second_sql_where.'
 		ORDER BY 
 			'.$order_options.'
